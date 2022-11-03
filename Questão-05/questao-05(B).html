@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questão-05(B)</title>
+  </head>
+
+  <body style="background-color: #e5e4e5">
+    <section class="container">
+      <canvas
+        style="padding: 25px"
+        id="canvas"
+        width="1400"
+        height="400"
+        style="border: solid 1px"
+      ></canvas>
+    </section>
+  </body>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const contexto = canvas.getContext("2d");
+
+    function matriz() {
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 3; j++) {
+          let largura = 80;
+          let altura = 80;
+          let v = 100;
+
+          contexto.beginPath();
+          contexto.strokeStyle = "blue";
+          contexto.rect(50 * (i + i), 50 * (j + j), largura, altura);
+          contexto.stroke();
+          contexto.closePath();
+
+          contexto.beginPath();
+          contexto.moveTo(40 + v * i, 20 + v * j);
+          contexto.lineTo(65 + v * i, 60 + v * j);
+          contexto.lineTo(15 + v * i, 60 + v * j);
+          contexto.lineTo(40 + v * i, 20 + v * j);
+          contexto.strokeStyle = "blue";
+          contexto.stroke();
+          contexto.closePath();
+        }
+      }
+    }
+
+    matriz();
+  </script>
+</html>

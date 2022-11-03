@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questão-05(A)</title>
+  </head>
+
+  <body style="background-color: #e5e4e5">
+    <section class="container">
+      <canvas
+        id="canvas"
+        width="1400"
+        height="400"
+        style="border: solid 1px"
+      ></canvas>
+    </section>
+  </body>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const contexto = canvas.getContext("2d");
+
+    function figura_01() {
+      contexto.beginPath();
+      contexto.strokeStyle = "blue";
+      contexto.rect(100, 80, 300, 200);
+      contexto.stroke();
+      contexto.closePath();
+
+      contexto.beginPath();
+      contexto.fillStyle = "blue";
+      contexto.moveTo(200, 220);
+      contexto.lineTo(250, 120);
+      contexto.lineTo(300, 220);
+      contexto.lineTo(200, 220);
+      contexto.fill();
+      contexto.closePath();
+    }
+
+    function figura_02() {
+      contexto.beginPath();
+      contexto.strokeStyle = "blue";
+      contexto.arc(600, 175, 105, (Math.PI / 180) * 360, (Math.PI / 180) * 0);
+      contexto.stroke();
+      contexto.closePath();
+
+      contexto.beginPath();
+      contexto.strokeStyle = "black";
+      contexto.fillStyle = "blue";
+      contexto.rect(540, 115, 120, 120);
+      contexto.fill();
+      contexto.stroke();
+      contexto.closePath();
+    }
+
+    function figura_03() {
+      contexto.beginPath();
+      contexto.strokeStyle = "blue";
+      contexto.moveTo(850, 270);
+      contexto.lineTo(950, 80);
+      contexto.lineTo(1050, 270);
+      contexto.lineTo(850, 270);
+      contexto.stroke();
+      contexto.closePath();
+
+      contexto.beginPath();
+      contexto.strokeStyle = "blue";
+      contexto.moveTo(1000, 270);
+      contexto.lineTo(1100, 80);
+      contexto.lineTo(1200, 270);
+      contexto.lineTo(1050, 270);
+      contexto.stroke();
+      contexto.closePath();
+    }
+
+    figura_01();
+    figura_02();
+    figura_03();
+  </script>
+</html>

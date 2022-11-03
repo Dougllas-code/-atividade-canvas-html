@@ -1,0 +1,18 @@
+1 – Com suas palavras descreva o que é a DOM e qual sua relação com o HTM.
+
+R1 - O DOM basicamente é uma interface utilizada por navegaodres que permite construir uma página web utilizando 
+     tecnologias como HTLM, CSS e JavaScript. Como a sigla DOM já indica ele utliza um model de nós e objetos para 
+     construção de páginas web, o código escrito em HTML por exemplo fica dentro do objeto Document.
+
+2 – O que é o canvas HTML?
+
+R2 - É um elemento HTML usado para construir uma áera na página web destinada a criação de gráficos e figuras dinâmicas. 
+
+3 – Quais as linguagens e tecnologias comumente envolvidas no desenvolvimento de produtos baseados em 
+canvas html?
+
+R3 - HTML, CSS e Javascript
+
+4 – Explique para que serve o código “document.getElementById()”
+
+R4 - Serve para referenciar ou "pegar" um elemento html através da propriedade Id.

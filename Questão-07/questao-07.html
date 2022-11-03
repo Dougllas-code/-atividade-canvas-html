@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questão-06</title>
+  </head>
+
+  <body style="background-color: #e5e4e5">
+    <section class="container">
+      <canvas
+        id="canvas"
+        width="600"
+        height="600"
+      ></canvas>
+    </section>
+  </body>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const contexto = canvas.getContext("2d");
+
+    const teclas = {
+      UP: 38,
+      DOWN: 40,
+      LEFT: 37,
+      RIGHT: 39,
+    };
+
+    let esquerda = false;
+    let direita = false;
+    let cima = false;
+    let baixo = false;
+
+    var posicao = {
+      x: 10,
+      y: 10,
+    };
+
+    const ghost = new Image();
+    ghost.src = "./ghost.png";
+
+    update();
+
+    window.addEventListener("keydown", keydown);
+    window.addEventListener("keyup", keyup);
+
+    function keydown(e) {
+      var key = e.keyCode;
+      if (key === teclas.LEFT && key !== teclas.RIGHT) {
+        esquerda = true;
+      }
+      if (key === teclas.RIGHT && key !== teclas.LEFT) {
+        direita = true;
+      }
+      if (key === teclas.UP && key !== teclas.DOWN) {
+        cima = true;
+      }
+      if (key === teclas.DOWN && key !== teclas.UP) {
+        baixo = true;
+      }
+    }
+
+    function keyup(e) {
+      var key = e.keyCode;
+
+      if (key === teclas.LEFT && key !== teclas.RIGHT) {
+        esquerda = false;
+      }
+      if (key === teclas.RIGHT && key !== teclas.LEFT) {
+        direita = false;
+      }
+      if (key === teclas.UP && key !== teclas.DOWN) {
+        cima = false;
+      }
+      if (key === teclas.DOWN && key !== teclas.UP) {
+        baixo = false;
+      }
+    }
+
+    function mover() {
+      if (esquerda) {
+        posicao.x--;
+      }
+      if (direita) {
+        posicao.x++;
+      }
+      if (cima) {
+        posicao.y--;
+      }
+      if (baixo) {
+        posicao.y++;
+      }
+    }
+
+    function renderizar() {
+      contexto.beginPath();
+      contexto.clearRect(0, 0, canvas.width, canvas.height);
+      contexto.closePath();
+      contexto.drawImage(ghost, posicao.x, posicao.y, 100, 100);
+    }
+
+    function update() {
+      requestAnimationFrame(update, canvas);
+      mover();
+      renderizar();
+    }
+  </script>
+</html>
